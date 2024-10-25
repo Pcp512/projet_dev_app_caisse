@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projet_dev_app_caisse", "projet_dev_app_caisse\projet_dev_app_caisse.csproj", "{D59A41C8-DFBB-4479-BDB5-B39B6DB51331}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{8CABF81A-09B7-48AC-B2B3-E4D2F7745C99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D59A41C8-DFBB-4479-BDB5-B39B6DB51331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D59A41C8-DFBB-4479-BDB5-B39B6DB51331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D59A41C8-DFBB-4479-BDB5-B39B6DB51331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D59A41C8-DFBB-4479-BDB5-B39B6DB51331}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {776750D6-4C7D-43B4-9462-33F20E9320FB}
+	EndGlobalSection
+EndGlobal
