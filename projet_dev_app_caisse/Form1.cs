@@ -9,8 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
 namespace projet_dev_app_caisse
 {
     public partial class Form1 : Form
@@ -59,20 +57,34 @@ namespace projet_dev_app_caisse
             MessageBox.Show("Nouveau panier créé.");
         }
 
-private void supprimerButton_Click(object sender, EventArgs e)
-{
-    if (listeProduitsBox.SelectedItem != null)
-    {
-        string itemToRemove = listeProduitsBox.SelectedItem.ToString();
-        ticketCaisse.Remove(itemToRemove); // Supprimer l'élément de ticketCaisse
-        listeProduitsBox.Items.Remove(itemToRemove); // Supprimer l'élément de l'affichage
-        
-    }
-    else
-    {
-        MessageBox.Show("Veuillez sélectionner un élément à supprimer.");
-    }
-}
+        private void supprimerButton_Click(object sender, EventArgs e)
+        {
+            if (listeProduitsBox.SelectedItem != null)
+            {
+                try
+                {
+                    // Extraire le nom du fruit et le poids de la chaîne sélectionnée
+                    string selectedItem = listeProduitsBox.SelectedItem.ToString();
+                    string[] parts = selectedItem.Split(new string[] { " - " }, StringSplitOptions.None);
+                    string fruit = parts[0];
+                    double poids = double.Parse(parts[1].Replace(" kg", ""));
+
+                    // Supprimer le produit via la classe Calcul
+                    calcul.SupprimerProduit(fruit, poids);
+
+                    // Mettre à jour l'affichage
+                    MettreAJourAffichagePanier();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de la suppression : " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un élément à supprimer.");
+            }
+        }
 
         private void ImporterFichier(string filePath)
         {
@@ -132,12 +144,20 @@ private void supprimerButton_Click(object sender, EventArgs e)
         {
             var contenuPanier = calcul.ObtenirContenuPanier();
             listeProduitsBox.Items.Clear();
+
             foreach (var item in contenuPanier)
             {
                 listeProduitsBox.Items.Add($"{item.Key} - {item.Value} kg");
             }
+
+            // Mettre à jour le nombre de produits
             PoidsText.Text = $"Nombre de produits : {contenuPanier.Count}";
-            // Mettre à jour le total si nécessaire
+
+            // Si vous voulez aussi mettre à jour le ticket.txt immédiatement
+            if (contenuPanier.Count > 0)
+            {
+                exporter.WriteReceipt(contenuPanier, calcul.FruitsEtPrix);
+            }
         }
 
         private void RemplirComboBoxFruits(System.Collections.Generic.IEnumerable<string> fruits)
@@ -172,6 +192,11 @@ private void supprimerButton_Click(object sender, EventArgs e)
             {
                 MessageBox.Show("Erreur lors de la génération du ticket : " + ex.Message);
             }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
 
 

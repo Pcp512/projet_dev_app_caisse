@@ -39,12 +39,13 @@
             this.listeProduitsBox = new System.Windows.Forms.ListBox();
             this.importerButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SuspendLayout();
             // 
             // fruitsText
             // 
             this.fruitsText.AutoSize = true;
-            this.fruitsText.Location = new System.Drawing.Point(126, 102);
+            this.fruitsText.Location = new System.Drawing.Point(102, 119);
             this.fruitsText.Name = "fruitsText";
             this.fruitsText.Size = new System.Drawing.Size(49, 16);
             this.fruitsText.TabIndex = 0;
@@ -52,22 +53,24 @@
             // 
             // fruitsComboBox
             // 
+            this.fruitsComboBox.DropDownHeight = 90;
             this.fruitsComboBox.FormattingEnabled = true;
-            this.fruitsComboBox.Location = new System.Drawing.Point(191, 99);
+            this.fruitsComboBox.IntegralHeight = false;
+            this.fruitsComboBox.Location = new System.Drawing.Point(105, 139);
             this.fruitsComboBox.Name = "fruitsComboBox";
             this.fruitsComboBox.Size = new System.Drawing.Size(121, 24);
             this.fruitsComboBox.TabIndex = 1;
             // 
             // poidsTextBox
             // 
-            this.poidsTextBox.Location = new System.Drawing.Point(457, 101);
+            this.poidsTextBox.Location = new System.Drawing.Point(251, 142);
             this.poidsTextBox.Name = "poidsTextBox";
             this.poidsTextBox.Size = new System.Drawing.Size(100, 22);
             this.poidsTextBox.TabIndex = 2;
             // 
             // ajouterButton
             // 
-            this.ajouterButton.Location = new System.Drawing.Point(603, 102);
+            this.ajouterButton.Location = new System.Drawing.Point(372, 142);
             this.ajouterButton.Name = "ajouterButton";
             this.ajouterButton.Size = new System.Drawing.Size(75, 23);
             this.ajouterButton.TabIndex = 3;
@@ -78,7 +81,7 @@
             // 
             // nouveauPanierButton
             // 
-            this.nouveauPanierButton.Location = new System.Drawing.Point(257, 23);
+            this.nouveauPanierButton.Location = new System.Drawing.Point(475, 56);
             this.nouveauPanierButton.Name = "nouveauPanierButton";
             this.nouveauPanierButton.Size = new System.Drawing.Size(193, 38);
             this.nouveauPanierButton.TabIndex = 4;
@@ -89,7 +92,7 @@
             // PoidsText
             // 
             this.PoidsText.AutoSize = true;
-            this.PoidsText.Location = new System.Drawing.Point(396, 104);
+            this.PoidsText.Location = new System.Drawing.Point(251, 119);
             this.PoidsText.Name = "PoidsText";
             this.PoidsText.Size = new System.Drawing.Size(38, 20);
             this.PoidsText.TabIndex = 5;
@@ -98,9 +101,9 @@
             // 
             // supprimerButton
             // 
-            this.supprimerButton.Location = new System.Drawing.Point(603, 225);
+            this.supprimerButton.Location = new System.Drawing.Point(105, 300);
             this.supprimerButton.Name = "supprimerButton";
-            this.supprimerButton.Size = new System.Drawing.Size(75, 23);
+            this.supprimerButton.Size = new System.Drawing.Size(121, 46);
             this.supprimerButton.TabIndex = 7;
             this.supprimerButton.Text = "Supprimer";
             this.supprimerButton.UseVisualStyleBackColor = true;
@@ -114,14 +117,14 @@
             // 
             this.listeProduitsBox.FormattingEnabled = true;
             this.listeProduitsBox.ItemHeight = 16;
-            this.listeProduitsBox.Location = new System.Drawing.Point(129, 211);
+            this.listeProduitsBox.Location = new System.Drawing.Point(105, 199);
             this.listeProduitsBox.Name = "listeProduitsBox";
-            this.listeProduitsBox.Size = new System.Drawing.Size(256, 84);
+            this.listeProduitsBox.Size = new System.Drawing.Size(342, 84);
             this.listeProduitsBox.TabIndex = 8;
             // 
             // importerButton
             // 
-            this.importerButton.Location = new System.Drawing.Point(30, 12);
+            this.importerButton.Location = new System.Drawing.Point(105, 24);
             this.importerButton.Name = "importerButton";
             this.importerButton.Size = new System.Drawing.Size(145, 70);
             this.importerButton.TabIndex = 9;
@@ -131,19 +134,36 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(603, 271);
+            this.button1.Location = new System.Drawing.Point(326, 300);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(121, 46);
             this.button1.TabIndex = 10;
             this.button1.Text = "imprimer_Button";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.51397F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.48603F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(498, 199);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(274, 84);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(911, 485);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.importerButton);
             this.Controls.Add(this.listeProduitsBox);
@@ -176,6 +196,7 @@
         private System.Windows.Forms.ListBox listeProduitsBox;
         private System.Windows.Forms.Button importerButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
